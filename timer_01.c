@@ -23,7 +23,7 @@ bool repeating_timer_callback(struct repeating_timer *t)
         gpio_put(LED_GREEN, !gpio_get(LED_GREEN)); // inverte o sinal lógico do LED green
     }
 
-      if (!gpio_get(LED_BLUE) && !gpio_get(LED_GREEN) && !gpio_get(LED_RED)) // LED blue, green e red desligados
+    if (!gpio_get(LED_BLUE) && !gpio_get(LED_GREEN) && !gpio_get(LED_RED)) // LED blue, green e red desligados
     {
         gpio_put(LED_RED, !gpio_get(LED_GREEN)); // inverte o sinal lógico do LED red de acordo nível lógico do LED green
     }
@@ -53,7 +53,7 @@ int main()
 
     while (true)
     {
-        printf("Hello, world!\n");
+        printf("aguardando o repeating timer...\n");
         sleep_ms(1000);
     }
 }
