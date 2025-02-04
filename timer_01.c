@@ -14,8 +14,13 @@ bool repeating_timer_callback(struct repeating_timer *t)
     }
 
     if (!gpio_get(LED_RED) && !gpio_get(LED_GREEN)) // LED red e green desligados
-    {     
+    {
         gpio_put(LED_BLUE, !gpio_get(LED_BLUE)); // inverte o sinal lógico do LED blue
+    }
+
+    if (!gpio_get(LED_RED) && !gpio_get(LED_BLUE)) // LED red e blue desligados
+    {
+        gpio_put(LED_GREEN, !gpio_get(LED_GREEN)); // inverte o sinal lógico do LED green
     }
 }
 
