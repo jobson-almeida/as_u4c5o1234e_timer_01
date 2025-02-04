@@ -8,7 +8,10 @@
 
 bool repeating_timer_callback(struct repeating_timer *t)
 {
-    printf("repeating_timer_callback\n");
+    if (!gpio_get(LED_GREEN) && !gpio_get(LED_BLUE)) // LED green e blue desligados
+    {
+        gpio_put(LED_RED, !gpio_get(LED_RED)); // inverte o sinal lógico do LED red
+    }
 }
 
 int main()
@@ -27,7 +30,7 @@ int main()
     // armazenara as informações sobre o temporizador
     struct repeating_timer timer;
 
-    // configura o time com delay de 3000 milisegundos 
+    // configura o time com delay de 3000 milisegundos
     // para cada uma das chamadas da função de callback
     add_repeating_timer_ms(3000, repeating_timer_callback, NULL, &timer);
 
