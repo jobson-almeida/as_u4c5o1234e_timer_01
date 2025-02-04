@@ -1,1 +1,4 @@
-# xas_u4c5o1234e_timer_01
+# Temporizador periódico
+
+O exercício proposto nesse programa é um exemplo de estudo sobre o **Repeating Timer**. Por meio da função **repeating_timer** esse temporizador é capaz de criar um timer definindo como parâmetros o **delay_ms** configurado em 3000 milisegundos e sua função callback **repeating_timer_callback**.
+Por outro lado, na função callback é introduzida a lógica que permite o acionamento alternado entre os LEDs vermelho, azul e verde, respectivamente, respeitando o tempo de 3 segundos entre cada acender e apagar dos LEDs. Um modelo alternativo de loop, eficiente e independente ao loop normalmente utilizado pela função main, capaz de ser executado as margens de outras tarefas que porventura possam ser executadas pelo microcontrolador.
