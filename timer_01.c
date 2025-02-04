@@ -37,6 +37,8 @@ int main()
     gpio_init(LED_GREEN);
     gpio_set_dir(LED_GREEN, GPIO_OUT);
 
+    gpio_put(LED_RED, true);
+
     // armazenara as informações sobre o temporizador
     struct repeating_timer timer;
 
